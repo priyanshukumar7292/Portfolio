@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-blue-deep text-white font-sans antialiased selection:bg-blue-electric selection:text-white;
+    /* Vignette Background simulating depth */
+    background: radial-gradient(circle at center, #0a192f 0%, #020b18 100%);
+    background-attachment: fixed;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply bg-blue-deep/60 backdrop-blur-md border-b border-white/5;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+  }
+
+  /* BMW M5 Stripe Accent */
+  .m5-stripe {
+    background: linear-gradient(90deg, #1e90ff 33%, #ffffff 33% 66%, #ff0000 66%);
+  }
+  
+  /* Grayscale to Color Image effect */
+  .grayscale-hover {
+    @apply filter grayscale transition-all duration-500 hover:grayscale-0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-blue-deep;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-electric rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-neon;
+}
+
+/* Radial Glow for Hero/Backgrounds */
+.radial-glow {
+  background: radial-gradient(circle at center, rgba(30, 144, 255, 0.15) 0%, transparent 70%);
+}
